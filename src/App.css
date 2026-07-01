@@ -1,0 +1,145 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 8vmin;
+  cursor: pointer;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  background: rgba(45, 45, 45, 0.5);
+  box-shadow: 0 10px 20px rgba(250, 250, 250, 0.5);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 2rem;
+}
+
+.navbar-container .navbar-menu {
+  display: flex;
+  list-style: none;
+  text-align: center;
+  gap: 1.5rem;
+}
+
+.navbar-container .navbar-menu li a {
+  text-decoration: none;
+  padding: 3px 20px;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  color: #ffffff;
+  font-size: 0.875rem;
+  transition: color 0.7s ease;
+  white-space: nowrap;
+}
+
+.navbar-container .navbar-menu li a:hover {
+  color: #ffffff;
+  background-color: #1a0826;
+  border: 2px solid #ffffff;
+}
+
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.navbar-toggle .bar {
+  height: 3px;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 880px) {
+  .navbar {
+    backdrop-filter: none;
+  }
+
+  .navbar-container .navbar-menu {
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 250px;
+    height: 100vh;
+    padding: 5rem 1.5rem;
+    background: rgba(45, 45, 45, 0.5);
+    box-shadow: 0 10px 20px rgba(250, 250, 250, 0.5);
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1.7rem;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .navbar-container .navbar-menu.open {
+    display: flex;
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .navbar-toggle {
+    display: flex;
+    z-index: 1001;
+  }
+
+  /* Animation for the hamburger menu when open */
+  .navbar-toggle.open .bar:nth-child(1) {
+     transform: rotate(45deg) translate(5px, 8px);
+  }
+
+  .navbar-toggle.open .bar:nth-child(2) {
+  opacity: 0;
+  }
+
+  .navbar-toggle.open .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -8px); 
+  }
+}
