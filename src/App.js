@@ -16,6 +16,7 @@ function Navbar() {
 const [isOpen, setIsOpen] = React.useState(false);
   
   return (
+    <>
     <nav className="navbar">
       <div className="navbar-container">
         <NavLogo />
@@ -23,7 +24,15 @@ const [isOpen, setIsOpen] = React.useState(false);
         <NavMenu isOpen={isOpen} />
       </div>
     </nav>
-  )
+
+    
+    <div className="header">
+        <NavLogo />
+        <NavMenuButton isOpen={isOpen} setIsOpen={setIsOpen} />
+        <NavMenu isOpen={isOpen} />
+      </div>
+    </>
+  );
 }
 
 function NavLogo() {
@@ -35,8 +44,11 @@ function NavLogo() {
 }
 
 function NavMenuButton({ isOpen, setIsOpen }) {
+  function onClick() {
+    setIsOpen(!isOpen);
+  }
   return (
-    <button className={isOpen ? "navbar-toggle open" : "navbar-toggle"} aria-label="Toggle navigation" onClick={() => setIsOpen(!isOpen)}>
+    <button className={isOpen ? "navbar-toggle open" : "navbar-toggle"} aria-label="Toggle navigation" onClick={onClick}>
             <span className="bar"></span>
             <span className="bar"></span>
             <span className="bar"></span>
