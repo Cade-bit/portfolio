@@ -6,6 +6,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
+      <Header />
     </div>
   );
 }
@@ -26,7 +27,7 @@ const [isOpen, setIsOpen] = React.useState(false);
     </nav>
 
     
-    <div className="header">
+    <div className="nav-header">
         <NavLogo />
         <NavMenuButton isOpen={isOpen} setIsOpen={setIsOpen} />
         <NavMenu isOpen={isOpen} />
@@ -64,9 +65,19 @@ function NavMenu({ isOpen }) {
           <li><a href="#">CV</a></li>
           <li><a href="#">Projects</a></li>
           <li><a href="#">Skills</a></li>
-          <li><a href="#">Projects</a></li>
         </ul>
   );
+}
+
+function Header() {
+  return (
+    <>
+    <header>
+      <h1>Welcome to <br></br>My Portfolio</h1>
+      <p>This is a brief introduction about myself and my work.</p>
+    </header>
+    </>
+  )
 }
 
 export default App;

@@ -1,3 +1,21 @@
+:root {
+  --primary-color: #19BFB7;
+  --secondary-color: #2a2a2a;
+  --background-color: rgba(45, 45, 45, 0.5);
+  --nav-background-color: #1a0826;
+  --white-text-color: #ffffff;
+
+  --box-shadow: 0 10px 20px rgba(250, 250, 250, 0.5);
+
+  --border-radius: 2rem;
+  --card-border-radius: 1rem;
+  --button-padding: 0.6rem 2rem;
+  --search-padding: 0.6rem 1rem;
+  --card-padding: 1rem;
+
+}
+
+
 .App {
   text-align: center;
 }
@@ -36,13 +54,13 @@
   width: 100%;
   position: sticky;
   top: 0;
-  background: rgba(45, 45, 45, 0.5);
-  box-shadow: 0 10px 20px rgba(250, 250, 250, 0.5);
+  background: var(--background-color);
+  box-shadow: var(--box-shadow);
   backdrop-filter: blur(10px);
   z-index: 1000;
 }
 
-.header {
+.nav-header {
   display: none;
   justify-content: center;
   align-items: center;
@@ -107,6 +125,21 @@
   transition: all 0.3s ease-in-out;
 }
 
+header {
+  color:var(--white-text-color);
+  margin-top: 30vh;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 8rem;
+  margin-bottom: 1rem;
+}
+header p {
+  font-size: 1.5rem;
+  color: var(--white-text-color);
+  margin-bottom: 2rem;
+}
 /* Media Queries for Mobile Responsiveness */
 @media (max-width: 880px) {
   .navbar {
@@ -114,14 +147,14 @@
     display: none;
   }
 
-  .header .App-logo {
+  .nav-header .App-logo {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 8vmin;
   }
 
-  .header {
+  .nav-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -129,7 +162,7 @@
     padding: 0 2rem;
   }
 
-  .header .navbar-menu {
+  .nav-header .navbar-menu {
     opacity: 0;
     overflow: hidden;
     position: absolute;
@@ -139,28 +172,29 @@
     width: 250px;
     height: 100vh;
     padding: 5rem 1.5rem;
-    background: rgba(45, 45, 45, 0.5);
-    box-shadow: 0 10px 20px rgba(250, 250, 250, 0.5);
+    background: var(--nav-background-color);
+    box-shadow: var(--box-shadow);
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     gap: 1.7rem;
     transform: translateY(-100%);
     transition: transform 0.3s ease-in-out;
+    z-index: 1000;
   }
 
-  .header .navbar-menu li a {
+  .nav-header .navbar-menu li a {
     text-decoration: none;
     padding: 3px 20px;
     border-radius: 5px;
     border: 2px solid transparent;
-    color: #ffffff;
+    color: var(--white-text-color);
     font-size: 0.875rem;
     transition: color 0.7s ease;
     white-space: nowrap;
   }
 
-  .header .navbar-menu.open {
+  .nav-header .navbar-menu.open {
     display: flex;
     opacity: 1;
     transform: translateX(0);
@@ -183,4 +217,17 @@
   .navbar-toggle.open .bar:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -8px); 
   }
+
+  header h1 {
+    font-size: 4rem;
+    color: var(--white-text-color);
+    margin-bottom: 1rem;
+  }
+  header p {
+    font-size: 1rem;
+    color: var(--white-text-color);
+    margin-bottom: 2rem;
+  }
+
 }
+
