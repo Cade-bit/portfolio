@@ -7,6 +7,7 @@ function App() {
     <div className="App">
       <Navbar />
       <Header />
+      <MainContent />
     </div>
   );
 }
@@ -77,6 +78,17 @@ function Header() {
       <p>This is a brief introduction about myself and my work.</p>
     </header>
     </>
+  )
+}
+
+function MainContent() {
+  return (
+    <main>
+      <div className="content">
+        <h2>About Me</h2>
+        <p>This is where you can write a brief introduction about yourself, your skills, and your experience.</p>
+      </div>
+    </main>
   )
 }
 
