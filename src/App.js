@@ -5,7 +5,41 @@ import { motion, useMotionValue, useSpring } from 'framer-motion';
 
 
 const techStack = [
-  
+  {
+    name: 'React',
+    imageSrc: logo,
+    imageAlt:'React logo',
+  },
+  {
+    name: 'Django',
+    imageSrc: 'https://static.djangoproject.com/img/logos/django-logo-negative.svg',
+    imageAlt:'Django logo',
+  },
+  {
+    name: 'Python',
+    imageSrc: 'https://www.python.org/static/community_logos/python-logo-inkscape.svg',
+    imageAlt:'Python logo',
+  },
+  {
+    name: 'PostgreSQL',
+    imageSrc: 'https://cdn.jsdelivr.net/gh/selfhst/icons/svg/postgresql.svg',
+    imageAlt:'PostgreSQL logo',
+  },
+  {
+    name: 'Tailwind',
+    imageSrc: 'https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/tailwind.svg',
+    imageAlt:'Tailwind logo',
+  },
+  {
+    name: 'Github',
+    imageSrc: 'https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/github-light.svg',
+    imageAlt:'Github logo',
+  },
+  {
+    name: 'Stripe',
+    imageSrc: 'https://cdn.jsdelivr.net/gh/selfhst/icons/svg/stripe.svg',
+    imageAlt:'Stripe logo',
+  },
 ]
 
 
@@ -98,28 +132,12 @@ function Header() {
 function TechStack() {
   return (
     <div className="tech-stack">
-        <div className="tech-stack-item">
-          <img src={logo} className="App-logo" alt="react logo" />
+      {techStack.map((logo) => (
+        <div key={logo.name} className="tech-stack-item">
+          <img src={logo.imageSrc} alt={logo.imageAlt} />
         </div>
-        <div className="tech-stack-item">
-          <img src="https://static.djangoproject.com/img/logos/django-logo-negative.svg" className="django-logo" alt="Django logo" />
-        </div>
-        <div className="tech-stack-item">
-          <img src="https://www.python.org/static/community_logos/python-logo-inkscape.svg" className="python-logo" alt="Python logo" />
-        </div>
-        <div className="tech-stack-item" id='postgresql-logo'>
-          <img src="https://cdn.jsdelivr.net/gh/selfhst/icons/svg/postgresql.svg" className="postgresql-logo" alt="Postgresql logo" />
-        </div>
-        <div className="tech-stack-item" id='tailwind-logo'>
-          <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/tailwind.svg" className="tailwind-logo" alt="Tailwind logo" />
-        </div>
-        <div className="tech-stack-item">
-          <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/github-light.svg" className="github-logo" alt="Github logo" />
-        </div>
-        <div className="tech-stack-item">
-          <img src="https://cdn.jsdelivr.net/gh/selfhst/icons/svg/stripe.svg" className="stripe-logo" alt="Stripe logo" />
-        </div>
-      </div>
+      ))}
+    </div>
   );
 }
 
