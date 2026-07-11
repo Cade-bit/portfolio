@@ -1,6 +1,6 @@
 :root {
   --color-primary: linear-gradient(-750deg,rgba(26, 8, 38, 1) 0%, rgba(150, 76, 199, 1) 100%);
-  --color-secondary: #2a2a2a;
+  --color-secondary: rgba(150, 76, 199, 1);
   --color-background: rgba(45, 45, 45, 0.5);
   --color-nav-background: #1a0826;
   --color-white-text: #ffffff;
@@ -190,6 +190,7 @@
 
 
 .content {
+  display: grid;
   margin-top: 30vh;
   padding: 5rem;
   height: 75vh;
@@ -198,6 +199,8 @@
   backdrop-filter: blur(10px);
   color: var(--color-white-text);
   text-align: left;
+  align-items: center;
+  float: right;
 }
 
 .content .test {
@@ -216,15 +219,23 @@
   -webkit-text-fill-color: transparent;
 }
 
-.content h2 {
-}
-
 .content .h3 {
   margin-right: 2rem;
 }
 
-.code-icon{
+.about-text2 {
+  display: flex;
+  margin-top: 5rem;
+}
+
+.about-text2 span {
+  gap: 4rem;
+  margin-right: 0.75rem;
+}
+
+.about-text2 .code-icon {
   size: 2rem;
+  float: left;
 }
 
 /* Media Queries for Mobile Responsiveness */
@@ -372,6 +383,10 @@
     }
     .content p {
       margin-top: 1rem;
+    }
+
+    .about-text2 {
+      display: none;
     }
 }
 
