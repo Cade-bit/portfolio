@@ -191,6 +191,8 @@
 
 .content {
   display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: right;
   margin-top: 30vh;
   padding: 5rem;
   height: 75vh;
@@ -206,7 +208,6 @@
 .content .test {
   float: left;
 }
-
 
 .content .about-text {
   float: right;
@@ -224,8 +225,12 @@
 }
 
 .about-text2 {
-  display: flex;
+  display: block;
   margin-top: 5rem;
+}
+
+.about-text2 p {
+  margin-bottom: 1rem;
 }
 
 .about-text2 span {
@@ -233,7 +238,7 @@
   margin-right: 0.75rem;
 }
 
-.about-text2 .code-icon {
+.about-text2 .icon {
   size: 2rem;
   float: left;
 }
