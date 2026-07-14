@@ -43,35 +43,114 @@ const techStack = [
 
 const skills = [
   {
-    name: 'React',
-    imageSrc: logo,
-    imageAlt: 'React logo'
+    id: '1',
+    category: 'Frontend',
+    items: [
+      {
+        name: 'React',
+        imageSrc: logo,
+        imageAlt: 'React logo'
+      },
+      {
+        name: 'JavaScript',
+        imageSrc: 'https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/javascript-light.svg',
+        imageAlt: 'JavaScript logo',
+      },
+      {
+        name: 'HTML',
+        imageSrc: 'https://cdn.jsdelivr.net/gh/selfhst/icons/svg/html5.svg',
+        imageAlt: 'HTML logo',
+      },
+      {
+        name: 'CSS',
+        imageSrc: 'https://cdn.jsdelivr.net/gh/selfhst/icons/svg/css3.svg',
+        imageAlt: 'CSS logo',
+      },
+      {
+        name: 'Tailwind',
+        imageSrc: 'https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/tailwind.svg',
+        imageAlt: 'Tailwind logo',
+      },
+      {
+        name: 'Bootstrap',
+        imageSrc: 'https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/bootstrap.svg',
+        imageAlt: 'Bootstrap logo',
+      },
+    ]
   },
   {
-    name: 'JavaScript',
-    imageSrc: 'https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/javascript-light.svg',
-    imageAlt: 'JavaScript logo',
+    id: '2',
+    category: 'Backend',
+    itetms: [
+      {
+        name:'Python',
+        imageSrc: 'https://www.python.org/static/community_logos/python-logo-inkscape.svg',
+        imageAlt: 'Python logo',
+      },
+      {
+        name: 'Django',
+        imageSrc: 'https://static.djangoproject.com/img/logos/django-logo-negative.svg',
+        imageAlt: 'Django logo',
+      },
+      {
+        name: 'Django REST Framework',
+        imageSrc: 'https://icon.icepanel.io/Technology/png-shadow-512/Django-REST.png',
+        imageAlt: 'Django REST Framework logo',
+      },
+      {
+      },
+    ]
   },
   {
-    name: 'HTML',
-    imageSrc: 'https://cdn.jsdelivr.net/gh/selfhst/icons/svg/html5.svg',
-    imageAlt: 'HTML logo',
+    id: '3',
+    category: 'Database',
+    itetms: [
+      {
+        name: 'PostgreSQL',
+        imageSrc: 'https://cdn.jsdelivr.net/gh/selfhst/icons/svg/postgresql.svg',
+        imageAlt: 'PostgreSQL logo',
+      },
+      {
+        name: 'SQLite',
+        imageSrc: 'https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/sqlitebrowser.svg',
+        imageAlt: 'SQLite logo',
+      },
+      {
+      },
+    ]
   },
   {
-    name: 'CSS',
-    imageSrc: 'https://cdn.jsdelivr.net/gh/selfhst/icons/svg/css3.svg',
-    imageAlt: 'CSS logo',
+    id: '4',
+    category: 'Tools & Others',
+    itetms: [
+      {
+        name: 'Git',
+        imageSrc: 'https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/git.svg',
+        imageAlt: 'Git logo',
+      }, 
+      {
+        name: 'Github',
+        imageSrc: 'https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/github-light.svg',
+        imageAlt:'Github logo',
+      },
+      {
+        name: 'VS Code',
+        imageSrc: 'https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/vscode.svg',
+        imageAlt: 'VS Code logo',
+      },
+      {
+        name: 'PyCharm',
+        imageSrc: 'https://resources.jetbrains.com/storage/products/company/brand/logos/PyCharm.png',
+        imageAlt: 'PyCharm logo',
+      },
+      {
+        name: 'Stripe',
+        imageSrc: 'https://cdn.jsdelivr.net/gh/selfhst/icons/svg/stripe.svg',
+        imageAlt: 'Stripe logo',
+      },
+    ]
   },
-  {
-    name: 'Tailwind',
-    imageSrc: 'https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/tailwind.svg',
-    imageAlt: 'Tailwind logo',
-  },
-  {
-    name: 'Bootstrap',
-    imageSrc: 'https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/bootstrap.svg',
-    imageAlt: 'Bootstrap logo',
-  },
+  
 ]
 
 
