@@ -5,7 +5,7 @@
   --color-nav-background: #1a0826;
   --color-white-text: #ffffff;
 
-   
+   --line-height: 2rem;
 
   --box-shadow: 0 10px 20px rgba(250, 250, 250, 0.5);
 
@@ -48,6 +48,7 @@
   box-sizing: border-box;
 }
 
+/* Navbar styling */
 .navbar {
   display: flex;
   justify-content: center;
@@ -127,6 +128,7 @@
   transition: all 0.3s ease-in-out;
 }
 
+/* Hero content */
 .hero {
   position: relative;
   display: flex;
@@ -175,7 +177,7 @@
   cursor: pointer;
 }
 
-
+/* different tech stack style to the current ones */
 /*.tech-stack .tech-stack-item {
   display: flex;
   justify-content: center;
@@ -192,11 +194,11 @@
 .content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  column-gap: 20rem;
   justify-content: right;
-  margin-top: 30vh;
+  margin: 10vh 0 15vh 0;
   padding: 5rem;
-  height: 75vh;
+  border-radius: var(--border-radius);
+  height: 100%;
   width: 100%;
   background: var(--color-background);
   backdrop-filter: blur(10px);
@@ -214,12 +216,14 @@
 .content .test img {
   object-fit: contain;
   width: 50rem;
+  border-radius: var(--card-border-radius);
 }
 
 .content .about-text {
   grid-column: 2;
   float: right;
-  line-height: 2rem;
+  line-height: var(--line-height);
+  margin-left: 15rem;
 }
 
 #important {
@@ -236,6 +240,7 @@
   grid-column: 2;
   grid-row: 2;
   display: block;
+  margin-left: 15rem;
 }
 
 .about-text2 p {
@@ -249,6 +254,34 @@
 
 .about-text2 .icon {
   size: 2rem;
+  float: left;
+}
+
+main .skills-layout {
+  margin-bottom: 5rem;
+  color: var(--color-white-text);
+}
+
+.skills-layout .title {
+  margin: 5rem 5rem 3rem 5rem;
+  line-height: var(--line-height);
+  float: left;
+  text-align: left;
+}
+
+.skill-card {
+  display: block;
+  width: 25rem;
+  margin: 0 0 0 4rem;
+  box-sizing: border-box;
+  min-height: 3.5rem;
+  padding: 1rem;
+  border: 2px solid #3029d6;
+  border-radius: var(--card-border-radius);
+  clear: both;
+}
+
+.skill-card h3 {
   float: left;
 }
 
@@ -384,8 +417,9 @@
       grid-row: 1;
       grid-column: 1;
       float: none;
-      line-height: 2rem;
+      line-height: var(--line-height);
       padding-right: 0;
+      margin-left: 0;
     }
 
     .content .test {
@@ -414,15 +448,24 @@
     }
 }
 
+/* Mobile display with screen orientation of landscape*/
+@media screen and (orientation: landscape) and (max-height: 480px) {
+  .content .test img {
+    display: none;
+  }
+}
+
+/* Ipad display with screen orientation of landscape */
 @media (max-width: 1366px) and (orientation: landscape) {
   .content {
       display: grid;
       grid-template-columns: 1fr;
+      height: 100%;
       min-height: 100%;
       max-height: 100%;
       margin: 10vh auto 0;
       align-items: center;
-      text-align: left;
+      text-align: center;
       padding: 1rem;
       box-sizing: border-box;
     }
@@ -431,8 +474,9 @@
       grid-row: 1;
       grid-column: 1;
       float: none;
-      line-height: 2rem;
+      line-height: var(--line-height);
       padding-right: 0;
+      margin-left: 0;;
     }
 
     .content .test {
@@ -454,14 +498,14 @@
       margin-bottom: 2px;
     }
     .content p {
-      margin-top: 1rem;
+      margin: 1rem 7rem 0 7rem;
     }
 
     .about-text2 {
       display: none;
     }
 }
-
+/* Ipad display with screen orientation of portrait */
 @media (max-width: 1024px) and (orientation: portrait) {
   .tech-stack {
     display: flex;
@@ -493,6 +537,7 @@
     .content {
       display: grid;
       grid-template-columns: 1fr;
+      height: 100%;
       min-height: 100%;
       max-height: 100%;
       margin: 10vh auto 0;
@@ -506,8 +551,9 @@
       grid-row: 1;
       grid-column: 1;
       float: none;
-      line-height: 2rem;
+      line-height: var(--line-height);
       padding-right: 0;
+      margin: 0 0 4rem 0;
     }
 
     .content .test {

@@ -41,6 +41,39 @@ const techStack = [
   },
 ]
 
+const skills = [
+  {
+    name: 'React',
+    imageSrc: logo,
+    imageAlt: 'React logo'
+  },
+  {
+    name: 'JavaScript',
+    imageSrc: 'https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/javascript-light.svg',
+    imageAlt: 'JavaScript logo',
+  },
+  {
+    name: 'HTML',
+    imageSrc: 'https://cdn.jsdelivr.net/gh/selfhst/icons/svg/html5.svg',
+    imageAlt: 'HTML logo',
+  },
+  {
+    name: 'CSS',
+    imageSrc: 'https://cdn.jsdelivr.net/gh/selfhst/icons/svg/css3.svg',
+    imageAlt: 'CSS logo',
+  },
+  {
+    name: 'Tailwind',
+    imageSrc: 'https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/tailwind.svg',
+    imageAlt: 'Tailwind logo',
+  },
+  {
+    name: 'Bootstrap',
+    imageSrc: 'https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/bootstrap.svg',
+    imageAlt: 'Bootstrap logo',
+  },
+]
+
 
 function App() {
   return (
@@ -63,7 +96,6 @@ const [isOpen, setIsOpen] = React.useState(false);
     <nav className="navbar">
       <div className="navbar-container">
         <NavLogo />
-        <NavMenuButton isOpen={isOpen} setIsOpen={setIsOpen} />
         <NavMenu isOpen={isOpen} />
       </div>
     </nav>
@@ -148,8 +180,10 @@ function MainContent() {
       <div className="test">
         <img src="https://images.unsplash.com/photo-1623479322729-28b25c16b011?q=80&w=1170&
         auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className="" alt="test"/>
+        {/*<TableOverlay />*/}
       </div>
       </div>
+        <SkillsCardLayout />
     </main>
   )
 }
@@ -231,12 +265,24 @@ function TableOverlay() {
   );
 }
 
-function SkillsCard() {
+function SkillsCardLayout() {
   return (
-    <div>
-
+    <div className="skills-layout">
+      <div className="title">
+        <h3 id="important">Skills & technologies</h3>
+        <h2> Technologies I work with</h2>
+      </div>
+      <SkillsCard />
     </div>
   );
+}
+
+function SkillsCard() {
+  return (
+    <div className="skill-card">
+      <h3>Frontend</h3>
+    </div>
+  )
 }
 
 export default App;
