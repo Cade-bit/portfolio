@@ -133,7 +133,7 @@ function TechStack() {
     <div className="tech-stack">
       {techStack.map((logo) => (
         <div key={logo.name} className="tech-stack-item">
-          <img src={logo.imageSrc} alt={logo.imageAlt} />
+          <img src={logo.imageSrc} alt={logo.imageAlt} className={`${logo.name === 'React' ? 'App-logo' : ''}`}/>
         </div>
       ))}
     </div>
@@ -146,7 +146,8 @@ function MainContent() {
       <div className="content">
       <AboutText />
       <div className="test">
-        {/*<img src="https://www.python.org/static/community_logos/python-logo-inkscape.svg" className="" alt="test"/>*/}
+        <img src="https://images.unsplash.com/photo-1623479322729-28b25c16b011?q=80&w=1170&
+        auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className="" alt="test"/>
       </div>
       </div>
     </main>
@@ -159,8 +160,8 @@ function AboutText() {
     <div className="about-text">
         <h2 id="important">About Me</h2>
         <h3>Im a Full Stack Developer<br></br> who loves building powerful and scalable<span id="important"> <br></br>web applications.</span></h3>
-        <p>I am a London based developer, and I enjoy working with modern technologies to solve<br></br>
-           real world problems through clean code. I love taking the time to build a solution that<br></br>
+        <p>I am a London based developer, and I enjoy working with modern technologies to solve
+           real world problems through clean code. I love taking the time to build a solution that
             actually creates a positive impavct for the UI or UX. </p>
       </div>
 
@@ -226,6 +227,14 @@ function TableOverlay() {
           </td>
         </tr>
       </table>
+    </div>
+  );
+}
+
+function SkillsCard() {
+  return (
+    <div>
+
     </div>
   );
 }
