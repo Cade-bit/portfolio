@@ -153,6 +153,24 @@ const skills = [
   
 ]
 
+const faqs = [
+  {
+    title: "Where are these chairs assembled?",
+    text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusantium, quaerat temporibus quas dolore provident nisi ut aliquid ratione beatae sequi aspernatur veniam repellendus.",
+  },
+  {
+    title: "How long do I have to return my chair?",
+    text: "Pariatur recusandae dignissimos fuga voluptas unde optio nesciunt commodi beatae, explicabo natus.",
+  },
+  {
+    title: "Do you ship to countries outside the EU?",
+    text: "Excepturi velit laborum, perspiciatis nemo perferendis reiciendis aliquam possimus dolor sed! Dolore laborum ducimus veritatis facere molestias!",
+  },
+  {
+    title: "How long will it take to get my chair?",
+    text: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, quaerat temporibus quas dolore provident nisi ut aliquid ratione beatae sequi aspernatur veniam repellendus.",
+  },
+];
 
 function App() {
   return (
@@ -161,6 +179,7 @@ function App() {
       <Hero />
       <TechStack />
       <MainContent />
+      <Accordion data={faqs} />
     </div>
   );
 }
@@ -253,6 +272,7 @@ function TechStack() {
 
 function MainContent() {
   return (
+    <>
     <main>
       <div className="content">
       <AboutText />
@@ -262,8 +282,12 @@ function MainContent() {
         {/*<TableOverlay />*/}
       </div>
       </div>
+      <section className="skills-section">
         <SkillsCardLayout />
+      </section>
     </main>
+    
+    </>
   )
 }
 
@@ -347,11 +371,11 @@ function TableOverlay() {
 function SkillsCardLayout() {
   return (
     <>
-  <div className="title">
-    <h3 id="important">Skills & technologies</h3>
-    <h2> Technologies I work with</h2>
-  </div>
-    <div className="skills-layout">
+    <div className="title">
+      <h3 id="important">Skills & technologies</h3>
+      <h2> Technologies I work with</h2>
+    </div>
+    <div className="skills-content">
       <SkillsCard />
     </div>
     </>
@@ -396,6 +420,66 @@ function SkillsCard() {
           </div>
         );
       })}
+    </div>
+  );
+}
+
+function Accordion({ data }) {
+  const [activeIndex, setActiveIndex] = React.useState(null);
+
+  return (
+    <div className="accordion">
+      {data.map((el, i) => (
+        <AccordionItem
+          activeIndex={activeIndex}
+          onOpen={setActiveIndex}
+          key={i}
+          num={i + 1}
+          title={el.title}
+        >
+          {el.text}
+        </AccordionItem>
+      ))}
+
+      <AccordionItem
+        activeIndex={activeIndex}
+        onOpen={setActiveIndex}
+        key={"test 1"}
+        num={22}
+        title={"Test 1"}
+      >
+        <p>Allows react developers to:</p>
+        <ul>
+          <li>Use state and other React features without writing a class.</li>
+          <li>
+            Share logic between components without changing the component
+            hierarchy.
+          </li>
+          <li>
+            Reuse stateful logic without changing your component hierarchy.
+          </li>
+          <li>Break up UI into components</li>
+          <li>Make components reusable</li>
+          <li>Place state efficiently</li>
+        </ul>
+      </AccordionItem>
+    </div>
+  );
+}
+
+function AccordionItem({ num, title, children, activeIndex, onOpen }) {
+  const isActive = num === activeIndex; // check if the current item's number is equal to the activeIndex, if so, it's active
+  function handleToggle() {
+    onOpen(isActive ? null : num); // if the item is active, set activeIndex to null, otherwise set it to the current item's number
+  }
+
+  return (
+    <div className={`item ${isActive ? "open" : ""}`} onClick={handleToggle}>
+      <div className="number">{num < 9 ? `0${num}` : num + 1}</div>
+      <div className="accordion-title"> {title}</div>
+      <p className="icon">{isActive ? "-" : "+"}</p>{" "}
+      {/* if isActive is true, show '-' otherwise show '+' */}
+      {isActive && <div className="content-box">{children}</div>}
     </div>
   );
 }
