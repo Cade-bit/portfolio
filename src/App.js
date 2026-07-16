@@ -81,7 +81,7 @@ const skills = [
   {
     id: '2',
     category: 'Backend',
-    itetms: [
+    items: [
       {
         name:'Python',
         imageSrc: 'https://www.python.org/static/community_logos/python-logo-inkscape.svg',
@@ -104,7 +104,7 @@ const skills = [
   {
     id: '3',
     category: 'Database',
-    itetms: [
+    items: [
       {
         name: 'PostgreSQL',
         imageSrc: 'https://cdn.jsdelivr.net/gh/selfhst/icons/svg/postgresql.svg',
@@ -122,7 +122,7 @@ const skills = [
   {
     id: '4',
     category: 'Tools & Others',
-    itetms: [
+    items: [
       {
         name: 'Git',
         imageSrc: 'https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/git.svg',
@@ -140,7 +140,7 @@ const skills = [
       },
       {
         name: 'PyCharm',
-        imageSrc: 'https://resources.jetbrains.com/storage/products/company/brand/logos/PyCharm.png',
+        imageSrc: 'https://resources.jetbrains.com/storage/products/company/brand/logos/PyCharm_icon.png',
         imageAlt: 'PyCharm logo',
       },
       {
@@ -346,22 +346,58 @@ function TableOverlay() {
 
 function SkillsCardLayout() {
   return (
+    <>
+  <div className="title">
+    <h3 id="important">Skills & technologies</h3>
+    <h2> Technologies I work with</h2>
+  </div>
     <div className="skills-layout">
-      <div className="title">
-        <h3 id="important">Skills & technologies</h3>
-        <h2> Technologies I work with</h2>
-      </div>
       <SkillsCard />
     </div>
+    </>
   );
 }
 
 function SkillsCard() {
+  const borderColors = {
+    Frontend: '#3b82f6',
+    Backend: '#10b981',
+    Database: '#f59e0b',
+    'Tools & Others': '#8b5cf6',
+  };
+
   return (
-    <div className="skill-card">
-      <h3>Frontend</h3>
+    <div className="skill-card-list">
+      {skills.map((skill) => {
+        const showImages = skill.category === 'Frontend' || skill.category === 'Backend';
+        const borderColor = borderColors[skill.category] || '#3029d6';
+
+        return (
+          <div
+            key={skill.id}
+            className="skill-card"
+            style={{ borderColor: borderColor }}
+          >
+            <h3>{skill.category}</h3>
+            <div className="skill-items">
+              {skill.items.map((item) => {
+                if (!item?.name) return null;
+
+                return (
+                  <div key={`${skill.id}-${item.name}`} className="skill-item">
+                    {showImages && item.imageSrc ? (
+                      <img src={item.imageSrc} alt={item.imageAlt} />
+                    ) : null}
+                    <span>{item.name}</span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        );
+      })}
     </div>
-  )
+  );
 }
 
 export default App;
