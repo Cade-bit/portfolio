@@ -140,7 +140,6 @@
   justify-content: center;
   gap: 1rem;
   color: var(--color-white-text);
-
 }
 
 .hero h1 {
@@ -324,7 +323,7 @@
 
 /* Accordion styling */
 .accordion {
-  width: 700px;
+  width: min(50em, 95%);
   margin: 100px auto;
   display: flex;
   flex-direction: column;
@@ -459,6 +458,10 @@
 
   .navbar-toggle.open .bar:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -8px); 
+  }
+
+  .hero {
+    align-items: flex-start;
   }
 
   .hero h1 {
